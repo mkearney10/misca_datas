@@ -206,21 +206,27 @@ elif plot_sel_1 == "Multiple Venues":
 else: 
     race_sel_1 = race_ord
     st.sidebar.write("--UPGRADES--")
-    mand_upgrd = st.sidebar.slider(
-        "Mandatory Upgrade below this Rank Percentile (0 = MiSCA rules):",
-        min_value = 0,
-        max_value = 40,
+    mand_upgrd_6 = st.sidebar.slider(
+        "Mandatory Upgrade if above this Rank in a field of 6-10:",
+        min_value = 1,
+        max_value = 10,
+        step = 1,
+        )
+    mand_upgrd_11 = st.sidebar.slider(
+        "Mandatory Upgrade if above this Rank in a field of >11:",
+        min_value = 3,
+        max_value = 15,
         step = 1,
         )
     sugg_upgrd = st.sidebar.slider(
-        "Suggested Upgrade below this Rank Percentile:",
+        "Suggested Upgrade if above this Rank in a field of >11:",
         min_value = 0,
-        max_value = 40,
+        max_value = 20,
         step = 1,
         )
     upgrd_thresh = st.sidebar.slider(
         "....for this many races:",
-        min_value = 1,
+        min_value = 2,
         max_value = 6,
         step = 1)
     st.sidebar.write("--NOVICE DOWNGRADES--")
