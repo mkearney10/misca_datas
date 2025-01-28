@@ -379,9 +379,9 @@ while n < df2.shape[0]:
                 df2.loc[n,'Upgrd_1'] = 'SUGGESTED'
                 df2.loc[n,'CatID_25_Upgrd_1'] = 102
             else:
-                df2.loc[n,'Upgrd_1'] = 'MAXED OUT'
+                df2.loc[n,'Upgrd_1'] = 'NONE'
                 df2.loc[n,'CatID_25_Upgrd_1'] = df2.loc[n,'CatID_25_dflt']
-        elif num_start == new_nov or new_nov >= nov_new_thresh:
+        elif num_start > 1 and (num_start == new_nov or new_nov >= nov_new_thresh):
             if catid in [502, 503]:
                 df2.loc[n,'Upgrd_1'] = 'NEW NOVICE'
                 df2.loc[n,'CatID_25_Upgrd_1'] = 521
